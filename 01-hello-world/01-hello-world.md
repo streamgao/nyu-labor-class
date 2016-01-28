@@ -21,16 +21,17 @@ Change `entry point` to `app.js`. If you forget to do that, you can just update 
 
 ```json
 {
-      "name": "exp",
-      "version": "1.0.0",
-      "description": "",
-      "main": "app.js",
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-      },
-      "author": "Ted Roden",
-      "license": "ISC"
-    }```
+  "name": "exp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ted Roden",
+  "license": "ISC"
+}
+```
 
 Now install express: `npm install express --save`
 
