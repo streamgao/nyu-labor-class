@@ -19,7 +19,8 @@ Create the package.json file:
 
 Change `entry point` to `app.js`. If you forget to do that, you can just update `package.json`. The `package.json` file should look like this:
 
-    {
+```json
+{
       "name": "exp",
       "version": "1.0.0",
       "description": "",
@@ -29,13 +30,13 @@ Change `entry point` to `app.js`. If you forget to do that, you can just update 
       },
       "author": "Ted Roden",
       "license": "ISC"
-    }
+    }```
 
 Now install express: `npm install express --save`
 
 Then create `app.js` file:
 
-    javascript
+```javascript
     var express = require('express');
     var app = express();
     
@@ -45,7 +46,7 @@ Then create `app.js` file:
 
     app.listen(3000, function () {
       console.log('Example app listening on port 3000!');
-    });
+    });```
 
 
 Now *run* the server:
@@ -77,8 +78,9 @@ Create a file `home.handlebars`
 
 Update app.js
 
-    var handlebars = require('express-handlebars');
+```diff
+    +var handlebars = require('express-handlebars');
     var app = express();
-    
-    app.engine('handlebars', handlebars({defaultLayout: 'main'}));
-    app.set('view engine', 'handlebars');
+    +
+    +app.engine('handlebars', handlebars({defaultLayout: 'main'}));
+    +app.set('view engine', 'handlebars');```
