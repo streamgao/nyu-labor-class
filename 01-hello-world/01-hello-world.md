@@ -19,7 +19,7 @@ Create the package.json file:
 
 Change `entry point` to `app.js`. If you forget to do that, you can just update `package.json`. The `package.json` file should look like this:
 
-```json
+```javascript
 {
   "name": "exp",
   "version": "1.0.0",
@@ -82,8 +82,9 @@ Create a file `home.handlebars`
 Update app.js
 
 ```diff
-    +var handlebars = require('express-handlebars');
-    var app = express();
-    +
-    +app.engine('handlebars', handlebars({defaultLayout: 'main'}));
-    +app.set('view engine', 'handlebars');```
++var handlebars = require('express-handlebars');
+var app = express();
++
++app.engine('handlebars', handlebars({defaultLayout: 'main'}));
++app.set('view engine', 'handlebars');
+```
