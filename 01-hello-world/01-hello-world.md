@@ -1,12 +1,8 @@
 # Hello World!
 
-Follow along here:
-http://expressjs.com/en/starter/installing.html
-
-Install:
+Install node:
  - node - https://nodejs.org/en/
 
-TL;DR
 Create the directory:
 
     mkdir myapp
@@ -50,13 +46,22 @@ app.listen(3000, function () {
 });
 ```
 
-
-
 Now *run* the server:
 
     node app.js
 
 Then point your browser to [http://localhost:3000](http://localhost:3000)
+
+- Logging
+	- `console.log("Hello, console!");`
+- Params
+	- console.log("Hello: " + req.query.name);
+- Add a new URL.
+
+
+Pro tip: http://www.hacksparrow.com/node-js-restart-on-file-change.html
+
+
 
 Now we can add our own handler.
 
@@ -74,17 +79,25 @@ http://handlebarsjs.com/
 
 Create a new file:
 
-	mkdir views
+	mkdir -p views/layouts/
+
+ 
 
 Create a file `home.handlebars`
 
 
-Update app.js
+Update app.js: 
 
 ```diff
+var express = require('express');
 +var handlebars = require('express-handlebars');
 var app = express();
-+
+
 +app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 +app.set('view engine', 'handlebars');
 ```
+
+## Homework
+1. Get comfortable with express and templates.
+1. Create a page with a list of things (using a for loop)
+1. Create a form and a page that accepts a POST request
