@@ -35,6 +35,7 @@ Now install express: `npm install express --save`
 
 Then create `app.js` file:
 
+    javascript
     var express = require('express');
     var app = express();
     
