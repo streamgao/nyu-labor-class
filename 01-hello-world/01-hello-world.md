@@ -99,5 +99,8 @@ var app = express();
 
 ## Homework
 1. Get comfortable with express and templates.
-1. Create a page with a list of things (using a for loop)
-1. Create a form and a page that accepts a POST request
+1. Create a page that lists items via templates (using a for loop)
+1. Create a form and a page that accepts a POST request and displays it
+1. Sign up for an API key at https://www.fancyhands.com/developer/apps/new
+
+
