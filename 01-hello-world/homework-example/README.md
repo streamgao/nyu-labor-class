@@ -1,13 +1,23 @@
 # Hello World Homework Example
 
-This is an example solution to the homework. I've also added some basic CSS styling to make it look a bit nicer. 
+This is an example solution to the homework. I've also added some basic CSS styling to make it look a bit nicer.  *Note:* Don't worry if your homework is different (or not functional). We'll go over this in class as well.
 
-*Note:* Don't worry if your homework is different (or not functional). We'll go over this in class as well.
+To run this code, download the whole `homework-example` directory. Then inside that directory run:
 
+```shell
+npm install
+```
 
-All of the code lives in `app.js` and in the handlebar in the `views` directory.
+And then run
 
---- 
+```shell
+node app.js
+```
+
+Once it's running, you should be able to view the running example at `localhost:3000`
+
+---
+
 This is the code that creates a list of things and displays it in the template when the user goes to `localhost:3000/list`
 
 First the javascript from `app.js`:
