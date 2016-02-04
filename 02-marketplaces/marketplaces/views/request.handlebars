@@ -1,0 +1,21 @@
+<style>
+
+/* align our messages from us on the right (the rest will be on the left) */  
+.message-from-client { 
+  text-align: right;
+}
+</style>
+
+<div class="alert message-from-client alert-info">{{ request.content }}</div>
+
+{{#each request.messages }}
+   <div class="alert {{ this.type }} alert-info">{{ this.content }}</div>	
+{{/each }}
+
+<hr> <!-- a little line -->
+
+<form method="POST" action="/request">
+  <input type="hidden" name="key" value="{{ request.key }}" />
+  <input class="form-control" type="text" name="message" placeholder="Send a new message...">
+  <input type="submit" class="form-control" value="Send the message!"> 
+</form>
