@@ -60,10 +60,23 @@ Once you've done that, it will create a file called `package.json` in the same d
 
 If you'd changed any values, your file may look slightly different than this. Ensure that `main` is set to `app.js`. If it's not, please update it now.
 
+----
+
+## Installing Express
+
+We've just created a `node` project, which create the `package.json` file. This file helps `npm` know about this application. It's useful if you want to push this app to a hosting service such as Heroku because it lists the libraries our application requires. In our case, `package.json` doesn't require any packages, yet. Let's install [express](http://expressjs.com/):
+
+```shell
+npm install express --save
+```
+
+Express is a great web framework that will help handle the nuts and bolts of our website. It handles the lower level HTTP interactions and let's us just focus on the code.
+
+----
+
 ## Creating our app.js
 
-We've just created a `node` project (the `package.json` file). However, node apps are built on `JavaScript` and we haven't written any `JavaScript` yet. 
-
+However, node apps are built on `JavaScript` and we haven't written any `JavaScript` yet. 
 
 
 Using the text editor of your choice, create a new file. Inside that file, add the following lines:
