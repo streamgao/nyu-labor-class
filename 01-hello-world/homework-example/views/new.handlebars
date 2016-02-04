@@ -1,0 +1,16 @@
+<form method="POST">
+
+  {{#if data}}
+    <div class="alert alert-success">
+      <span>Message: <strong>{{ data.message }}</strong></span>
+    </div>
+  {{/if }}
+  
+  <div class="input-group">
+    <span class="input-group-addon" >Message</span>    
+    <input class="form-control" type="text" name="message" placeholder="Message you'd like to display...">
+  </div>
+
+  <input type="submit" class="form-control" value="Send the message!"> 
+  
+</form>
