@@ -73,7 +73,7 @@ And the view in `views/new.handlebars` displays the form:
 </form>
 ```
 
-The following code accepts the POST request and renders teh data.
+The following code accepts the POST request and renders the data.
 
 ```javascript
 // Accept a POST request and display it (template in the file views/new.handlebars)
