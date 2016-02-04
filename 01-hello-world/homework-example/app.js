@@ -12,18 +12,20 @@ app.get('/', function (req, res) {
     res.render('home', { pageTitle: "Home" } );
 });
 
-
+// Display a new form (located in the file views/new.handlebars)
 app.get('/new', function (req, res) {
     res.render('new', { pageTitle: "Submit a new task" } );
 });
 
+// Accept a POST request and display it (template in the file views/new.handlebars)
 app.post('/new', function (req, res) {
 	var data =  { message: req.body.message };
 	console.log(data);
     res.render('new', { pageTitle: "Submit a new task", data: data } );
 });
 
-
+// This creates a list of `foods` and displays it in a new template
+// template located (views/list.handlebars)
 app.get('/list', function (req, res) {
 	var foods = [ "Beans", "Rice", "Pickles", "PB&J", "Nachos" ];
 	console.log(req.body.title);
