@@ -1,0 +1,32 @@
+<form method="POST">
+
+  {{#if data}}
+  <span>title: {{ data.title }}</span> <br />
+  <span>Price: {{ data.price }}</span> <br />
+  <span>body: {{ data.body }}</span> <br />    
+  {{/if }}
+  
+  <div class="input-group">
+    <span class="input-group-addon" >Title</span>    
+    <input class="form-control" type="text" name="title" placeholder="Title of task...">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" >Body</span>    
+    <textarea class="form-control" name="body" placeholder="What do you want to have done?"></textarea>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" >Price</span>
+	<input type="number"
+		   name="price"
+		   value="1.00"
+		   min="0"
+		   step="0.01"
+		   data-number-to-fixed="2"
+		   data-number-stepfactor="100"
+		   class="form-control currency"
+		   id="c2" />
+  </div>
+
+  <input type="submit" class="form-control" value="Send!"> 
+  
+</form>
