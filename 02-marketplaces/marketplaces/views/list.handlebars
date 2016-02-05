@@ -1,5 +1,5 @@
 <ul>
-   {{#each foods}}
-     <li>{{ this }}
+   {{#each requests}}
+     <li><a href="/request/?key={{ this.key }}">{{ this.title }}</a></li>
    {{/each }}
 </ul>

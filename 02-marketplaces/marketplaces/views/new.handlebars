@@ -1,32 +1,37 @@
+
 <form method="POST">
 
   {{#if data}}
-  <span>title: {{ data.title }}</span> <br />
-  <span>Price: {{ data.price }}</span> <br />
-  <span>body: {{ data.body }}</span> <br />    
+    <div class="alert alert-success">
+		 Success! Created request: <a href="/request?key={{ data.key }}">{{data.title }}</a>.
+
+    </div>
   {{/if }}
   
   <div class="input-group">
-    <span class="input-group-addon" >Title</span>    
-    <input class="form-control" type="text" name="title" placeholder="Title of task...">
+    <input class="form-control" type="text" name="title" placeholder="Title">
+    <span class="input-group-addon" >Title</span>    	
   </div>
+
   <div class="input-group">
-    <span class="input-group-addon" >Body</span>    
-    <textarea class="form-control" name="body" placeholder="What do you want to have done?"></textarea>
+    <input class="form-control" type="text" name="description" placeholder="Description">
+    <span class="input-group-addon" >Description</span>    	
   </div>
+
   <div class="input-group">
-    <span class="input-group-addon" >Price</span>
 	<input type="number"
-		   name="price"
-		   value="1.00"
+		   name="bid"
+		   value="3.00"
 		   min="0"
 		   step="0.01"
 		   data-number-to-fixed="2"
 		   data-number-stepfactor="100"
 		   class="form-control currency"
 		   id="c2" />
+    <span class="input-group-addon" >$</span>	
   </div>
-
-  <input type="submit" class="form-control" value="Send!"> 
+  
+  
+  <input type="submit" class="form-control" value="Send the message!"> 
   
 </form>
