@@ -5,8 +5,8 @@ var fancyhands = require('fancyhands-node').fancyhands;
 var app = express();
 
 // Configuration
-// fancyhands.config('9ALLnTW3stkFrnL', 'LupLe86P5GSU7HP', 'http://localhost:8080');
-fancyhands.config('gd43Q8D5HNiJwlp', '9cn99NJ4kbaezPR', 'http://localhost:8080') //
+fancyhands.config('9ALLnTW3stkFrnL', 'LupLe86P5GSU7HP'); // , 'http://localhost:8080');
+// fancyhands.config('gd43Q8D5HNiJwlp', '9cn99NJ4kbaezPR', 'http://localhost:8080') //
 
 
 // use the body parser middlewear so we can accept post requests
