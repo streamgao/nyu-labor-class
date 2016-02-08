@@ -1,6 +1,5 @@
-## Class
+## Marketplaces
 
-* There will be a break today! (sorry about last week)
 * Demo last weeks assignments
 * Discuss [these services](https://docs.google.com/spreadsheets/d/10U8BtrQON8WmT7pfvaGjnsY4YgcDEW0T-niR0tmqV10/edit#gid=0).
     * Classify them
