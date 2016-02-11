@@ -2,25 +2,25 @@
 
 * Demo last weeks assignments
 * Discuss [these services](https://docs.google.com/spreadsheets/d/10U8BtrQON8WmT7pfvaGjnsY4YgcDEW0T-niR0tmqV10/edit#gid=0).
-    * Classify them
-    * Are they creating jobs, destrying jobs?
-    * What's not on the list? Why? Will it get added?
+  * Classify them
+  * Are they creating jobs, destrying jobs?
+  * What's not on the list? Why? Will it get added?
 * Review [Express](http://expressjs.com/)
-    * What does it do? (HTTP)
-      * GET requests
-      * Templates
-          * `for` loops
-    	  * `if` statements
-      * middlewhere
-      * POST requests
+  * What does it do? (HTTP)
+    * GET requests
+    * Templates
+        * `for` loops
+  	  * `if` statements
+    * middlewhere
+    * POST requests
 * Talk [Fancy Hands](https://www.fancyhands.com)
-      * Business Model
-      * Requests
-          * Life cycle
-          * Types of data
-      * Discuss [Fancy Hands API](https://www.fancyhands.com/developer)
-      * Discuss [Fancy Hands Node SDK](https://github.com/fancyhands/fancyhands-node)
-          * Try it out
+    * Business Model
+    * Requests
+      * Life cycle
+      * Types of data
+    * Discuss [Fancy Hands API](https://www.fancyhands.com/developer)
+    * Discuss [Fancy Hands Node SDK](https://github.com/fancyhands/fancyhands-node)
+      * Try it out
 
 ## Assignment
 
