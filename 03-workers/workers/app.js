@@ -5,8 +5,7 @@ var fancyhands = require('fancyhands-node').fancyhands;
 var app = express();
 
 // Configuration
-fancyhands.config('abcdefghijklmno', 'pqrstuvwxyznwsw', 'http://localhost:8080');
-//fancyhands.config('9ALLnTW3stkFrnL', 'LupLe86P5GSU7HP');
+fancyhands.config('abcdefghijklmno', 'pqrstuvwxyznwsw');
 
 // use the body parser middlewear so we can accept post requests
 app.use(bodyParser.urlencoded({ extended: true })); 
@@ -25,21 +24,25 @@ app.get('/new', function (req, res) {
 // Accept a POST request and display it (template in the file views/new.handlebars)
 app.post('/new', function (req, res) {
 
-	// build a friendly description
+	// Build a friendly description for the worker to read
 	var description = "Looking at this image: <br />" +
 		req.body.image + "<br /> " +
 		"Tell me: " + req.body.question;
 
-	// the data
+	// the request data to send to Fancy Hands
 	var request =  {
+		// set the price
 		bid: 0.75,
+		// Set the title and description
 		title: "Easy: " + req.body.question,
 		description: description,
+		// There is only one question to ask
 		custom_fields: [
 			{
 				"type": "radio",
 				"required": true,
 				"label": "Options",
+				"image_url": req.body.image,
 				"description": req.body.question,
 				"options": req.body.options.split(","),
 				"order": 0,
@@ -49,13 +52,14 @@ app.post('/new', function (req, res) {
 	};
 	
 	var created_count = 0;
-	for(var i = 0; i < 3; ++i) {
-		// ok, we want to submit this 3 times.
+	var LIMIT = 3;
+	for(var i = 0; i < LIMIT; ++i) {
+		// OK, we want to submit this 3 times.
 		fancyhands.custom_request_create(request)
 			.then(function(data) {
 				created_count++;
-				console.log("submitted request: " + created_count);
-				if(created_count == 3) {
+				// we can only render once, so let's do it when we've created all the tasks
+				if(created_count == LIMIT) {
 					res.render('new', { pageTitle: "Submitted the tasks!" } );
 				}
 			});
@@ -69,31 +73,39 @@ app.get('/list', function (req, res) {
 	
 	fancyhands.custom_request_get()
 		.then(function(data) {
-			
-			var requests = {};
 
+			// create a dictionary to hold the images
+			var images = {};
+
+			// loop through all the requests
 			for(var i = 0; i < data.requests.length; ++i) {
+				// set the request itself as a variable for easier access
 				var request = data.requests[i];
+				// set the title
 				var title = request.title;
+				// each request has an answer (if it's been closed by Fancy Hands)
+				var answer = request.custom_fields[0].answer;
+				// Set the image url
+				var image_url = request.custom_fields[0].image_url;
 
-				if(!(title in requests)) {
-					requests[title] = [];
+				// We want to group the images together by title, 
+				// so we create a place to store the data for each unique `title`
+				if(!(title in images)) {
+					images[title] = {
+						question: request.description,
+						image_url: image_url,
+						// an array of the answers
+						answers: [], 
+					};
 				}
 
-				requests[title].append(request);
+				console.log(image_url);
 				
-				console.log("---- START REQUEST --");
-				console.log(JSON.stringify(request, null, 4)); // formatted nicely.
-				console.log("---- END REQUEST ----");
-				
+				// put it into the array so we can show it on the pag
+				images[title].answers.push(answer);
 			}
 			
-			var titles = [];
-			
-			// console.log("OK, here I am....");
-			// console.log(data.requests);
-			// console.log("OK OK OK OK ");
-			res.render('list', { requests: data.requests, pageTitle: "My Requests" } );
+			res.render('list', { images: images, pageTitle: "Images" } );
 	});
 });
 

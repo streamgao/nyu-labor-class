@@ -1,5 +1,18 @@
-<ul>
-   {{#each requests}}
-     <li><a href="/request/?key={{ this.key }}">{{ this.title }}</a> [{{ this.uniq }}]</li>
-   {{/each }}
-</ul>
+
+{{#each images}}
+  <div class="row">
+    <div class="col-md-3">
+      <img src="{{ this.image_url }}" style="max-width: 250px; max-height: 250px; float: left;"/>
+    </div>
+    <div class="col-md-4">
+      <ol>  
+        {{{ @key }}}
+        {{#each this.answers }}
+          <li>{{#if this}}{{ this }}{{else}} &mdash; {{/if }}
+        {{/each }}
+      </ol>
+    </div>
+  </div>
+  <hr >
+{{/each }}
+
