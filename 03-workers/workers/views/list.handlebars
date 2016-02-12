@@ -1,13 +1,23 @@
 
+<!-- Loop through the images.
+     In this case, the `images` is an array of
+     dictionary objects that contains an image_url
+     and the list of answers.
+ -->
 {{#each images}}
   <div class="row">
     <div class="col-md-3">
-      <img src="{{ this.image_url }}" style="max-width: 250px; max-height: 250px; float: left;"/>
+      <!-- Show the image on the left (at a reasonable size) -->      
+      <img src="{{ this.image_url }}"
+      style="max-width: 250px; max-height: 250px; float: left;"/>
     </div>
     <div class="col-md-4">
-      <ol>  
+      <ol>
+        <!-- Show the question -->
         {{{ @key }}}
+        <!-- And loop through the answers -->
         {{#each this.answers }}
+          <!-- And there an answer show it, otherwise just show a dash -->          
           <li>{{#if this}}{{ this }}{{else}} &mdash; {{/if }}
         {{/each }}
       </ol>

@@ -1,4 +1,4 @@
-# Hello World Homework Example
+# Marketplaces Homework Example
 
 This is an example solution to the homework. I've also added some basic CSS styling to make it look a bit nicer.  *Note:* Don't worry if your homework is different (or not functional). We'll go over this in class as well.
 
