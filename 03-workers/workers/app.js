@@ -5,7 +5,7 @@ var fancyhands = require('fancyhands-node').fancyhands;
 var app = express();
 
 // Configuration
-fancyhands.config('abcdefghijklmno', 'pqrstuvwxyznwsw');
+fancyhands.config('abcdefghijklmno', 'pqrstuvwxyznwsw', 'http://localhost:8080');
 
 // use the body parser middlewear so we can accept post requests
 app.use(bodyParser.urlencoded({ extended: true })); 
@@ -52,7 +52,7 @@ app.post('/new', function (req, res) {
 				// Since we're using a group of radio buttons, we need to provide the options 
 				"options": req.body.options.split(","),
 				// the fieldname that we can use to refer to it later
-				"field_name": "options"
+				"field_name": "options",
 				// What order should we display these fields in?
 				"order": 0,
 				// set the image url so we can use it later.
