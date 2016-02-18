@@ -5,8 +5,9 @@ var fancyhands = require('fancyhands-node').fancyhands;
 var app = express();
 
 // Configuration
-fancyhands.config('9ALLnTW3stkFrnL', 'LupLe86P5GSU7HP'); // , 'http://localhost:8080');
-// fancyhands.config('gd43Q8D5HNiJwlp', '9cn99NJ4kbaezPR', 'http://localhost:8080') //
+var YOUR_API_KEY = "";
+var YOUR_API_SECRET = "";
+fancyhands.config(YOUR_API_KEY, YOUR_API_SECRET);
 
 
 // use the body parser middlewear so we can accept post requests
@@ -29,14 +30,17 @@ app.post('/new', function (req, res) {
 	var request =  {
 		bid: req.body.bid,
 		title: req.body.title,
-		description: req.body.description
+		description: req.body.description,
 	};
+	
 
 	fancyhands.standard_request_create(request)
 		.then(function(data) {
-			// console.log(data);
+			console.log(data);
 			res.render('new', { pageTitle: "Submitted a new task!", data: data } );
-	});
+
+		});
+
 });
 
 // This displays the list of standard requests that we've sent in to fancy hands
