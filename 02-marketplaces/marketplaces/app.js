@@ -9,7 +9,6 @@ var YOUR_API_KEY = "";
 var YOUR_API_SECRET = "";
 fancyhands.config(YOUR_API_KEY, YOUR_API_SECRET);
 
-
 // use the body parser middlewear so we can accept post requests
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));

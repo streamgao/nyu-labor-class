@@ -5,7 +5,9 @@ var fancyhands = require('fancyhands-node').fancyhands;
 var app = express();
 
 // Configuration
-fancyhands.config('abcdefghijklmno', 'pqrstuvwxyznwsw', 'http://localhost:8080');
+var YOUR_API_KEY = "";
+var YOUR_API_SECRET = "";
+fancyhands.config(YOUR_API_KEY, YOUR_API_SECRET);
 
 // use the body parser middlewear so we can accept post requests
 app.use(bodyParser.urlencoded({ extended: true })); 
