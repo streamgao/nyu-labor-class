@@ -16,7 +16,7 @@
    
 ## Assignment
 
-* Email me an informal [Final Project](https://github.com/tedroden/nyu-labor-class/blob/master/final-project.md) proposal by **Feb 24th at Noon**
+* Email me an informal [Final Project](https://github.com/tedroden/nyu-labor-class/blob/master/final-project.md) proposal by **Weds, Feb 24th at Noon**
   * What are you going to build? 
   * What are the different parts? 
     * Example using your own labor pool
