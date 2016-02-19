@@ -1,10 +1,9 @@
 
 <form method="POST">
 
-  {{#if data}}
+  {{#if success}}
     <div class="alert alert-success">
-		 Success! Created request: <a href="/request?key={{ data.key }}">{{data.title }}</a>.
-
+	  Success, requests create! Check <a href="/list">the list</a>!
     </div>
   {{/if }}
   
@@ -12,7 +11,6 @@
     <input class="form-control" type="text" name="question" placeholder="What color is this dress?">
     <span class="input-group-addon" >Question?</span>    	
   </div>
-
 
   <div class="input-group">
     <input class="form-control" type="text" name="image" placeholder="http://www...">
@@ -23,34 +21,6 @@
     <input class="form-control" type="text" name="options" placeholder="white and gold, blue and orange">
     <span class="input-group-addon" >Options (comma separated)</span>    	
   </div>  
-
-  <!--
-  <div class="input-group">
-	<input type="number"
-		   name="count"
-		   value="1"
-		   min="0"
-		   step="1"
-		   class="form-control"
-		   id="c2" />
-    <span class="input-group-addon" >How many times?</span>	
-  </div>
-
-  <div class="input-group">
-	<input type="number"
-		   name="bid"
-		   value="0.75"
-		   min="0"
-		   step="0.01"
-		   data-number-to-fixed="2"
-		   data-number-stepfactor="100"
-		   class="form-control currency"
-		   id="c2" />
-    <span class="input-group-addon" >$</span>	
-  </div>
-
-  -->
-  
   
   <input type="submit" class="form-control" value="Send the message!"> 
   

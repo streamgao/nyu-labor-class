@@ -36,23 +36,35 @@ app.post('/new', function (req, res) {
 		// Set the title and description
 		title: "Easy: " + req.body.question,
 		description: description,
-		// There is only one question to ask
+		// Build the 'form' that the assistant will fill out.
+		// We can have as many fields as we want, 
+		// but in this case we're only asking one question.
 		custom_fields: [
 			{
+				// what type of HTML field is it? In this case a group of radio buttons
 				"type": "radio",
+				// this is a required field
 				"required": true,
+				// The "label" of the field (that the assistant sees)
 				"label": "Options",
-				"image_url": req.body.image,
+				// The description of the field (that the assistant sees)
 				"description": req.body.question,
+				// Since we're using a group of radio buttons, we need to provide the options 
 				"options": req.body.options.split(","),
+				// the fieldname that we can use to refer to it later
+				"field_name": "options"
+				// What order should we display these fields in?
 				"order": 0,
-				"field_name": "options"			
+				// set the image url so we can use it later.
+				"image_url": req.body.image,
 			}
 		]
 	};
-	
+
+	// set a limit for how many we can create
+	var LIMIT = 3;	
+	// keep track of how many we've created
 	var created_count = 0;
-	var LIMIT = 3;
 	for(var i = 0; i < LIMIT; ++i) {
 		// OK, we want to submit this 3 times.
 		fancyhands.custom_request_create(request)
@@ -60,11 +72,10 @@ app.post('/new', function (req, res) {
 				created_count++;
 				// we can only render once, so let's do it when we've created all the tasks
 				if(created_count == LIMIT) {
-					res.render('new', { pageTitle: "Submitted the tasks!" } );
+					res.render('new', { pageTitle: "Submitted the tasks!", success: true } );
 				}
 			});
 	}
-
 });
 
 // This displays the list of standard requests that we've sent in to fancy hands
@@ -98,8 +109,6 @@ app.get('/list', function (req, res) {
 						answers: [], 
 					};
 				}
-
-				console.log(image_url);
 				
 				// put it into the array so we can show it on the pag
 				images[title].answers.push(answer);
@@ -109,17 +118,6 @@ app.get('/list', function (req, res) {
 	});
 });
 
-
-// This displays the list of standard requests that we've sent in to fancy hands
-// template located (views/list.handlebars)
-app.get('/request', function (req, res) {
-
-	fancyhands.custom_request_get({ key: req.query.key })
-		.then(function(request) {
-			console.log(request);
-			res.render('request', { request: request, pageTitle: request.title } );
-		});
-});
 
 
 app.listen(3000, function () {
