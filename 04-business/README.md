@@ -7,7 +7,11 @@
 * Introduce the [Final Project](https://github.com/tedroden/nyu-labor-class/blob/master/final-project.md)
 * Saving data on the server
   * Introducing [node persist](https://github.com/simonlast/node-persist) `npm install node-persist --save`
-
+  * Saving a string with `storage.setItem()`
+    * Showing it with `storage.getItem()`
+  * Saving a list of strings with `storage.setItem()`
+	* Getting a list of strings with `storage.getItem()`
+  * Converting it to dictionaries
    
 ## Assignment
 

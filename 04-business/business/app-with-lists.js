@@ -28,6 +28,19 @@ app.post('/new', function (req, res) {
 	// set the latest message
 	var message = req.body.message;
 	storage.setItem("message", message);
+
+	// load the existing messages
+	var existing_messages = storage.getItem("message-list");
+
+	// no existing items? create an empty list
+	if(!existing_messages) {
+		existing_messages = [];
+	}
+
+	// save the message to the list of existing messages
+	existing_messages.push(req.body.message);
+	storage.setItem("message-list", existing_messages);
+
 	// redirect back to the main page
 	res.redirect("/new");
 });
@@ -35,7 +48,7 @@ app.post('/new', function (req, res) {
 // This creates a list of `foods` and displays it in a new template
 // template located (views/list.handlebars)
 app.get('/list', function (req, res) {
-	var messages = [];
+	var messages = storage.getItem("message-list");
     res.render('list', { messages: messages, pageTitle: "Existing messages" } );
 });
 
