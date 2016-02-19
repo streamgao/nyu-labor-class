@@ -6,7 +6,7 @@
    * [In Praise of Efficient Price Gouging](https://www.technologyreview.com/s/529961/in-praise-of-efficient-price-gouging/)
 * Demo assignments from last week
 * Introduce the [Final Project](https://github.com/tedroden/nyu-labor-class/blob/master/final-project.md)
-* Saving data on the server
+* Saving data on the server (using the code in [business](https://github.com/tedroden/nyu-labor-class/tree/master/04-business/business))
   * Introducing [node persist](https://github.com/simonlast/node-persist) `npm install node-persist --save`
   * Saving a string with `storage.setItem()`
     * Showing it with `storage.getItem()`
