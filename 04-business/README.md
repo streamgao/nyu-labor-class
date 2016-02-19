@@ -4,14 +4,14 @@
 * Discuss the Readings
    * [When Your Boss Is an Uber Algorithm](https://www.technologyreview.com/s/543946/when-your-boss-is-an-uber-algorithm/)
    * [In Praise of Efficient Price Gouging](https://www.technologyreview.com/s/529961/in-praise-of-efficient-price-gouging/)
-* Introduce the [Final Project]()
+* Introduce the [Final Project](https://github.com/tedroden/nyu-labor-class/blob/master/final-project.md)
 * Saving data on the server
   * Introducing [node persist](https://github.com/simonlast/node-persist) `npm install node-persist --save`
 
    
 ## Assignment
 
-* Email me an informal project proposal by **Feb 24th at Noon**
+* Email me an informal [Final Project](https://github.com/tedroden/nyu-labor-class/blob/master/final-project.md) proposal by **Feb 24th at Noon**
   * What are you going to build? 
   * What are the different parts? 
     * Example using your own labor pool
