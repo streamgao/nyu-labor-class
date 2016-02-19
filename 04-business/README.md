@@ -30,8 +30,4 @@
       * Your code takes the results, combines them, and displays the `product`
 	  
 * Prepare a final project proposal
-  * Next week, you'll talk about what we can expect to see in 
-
-
-
-
+  * Next week, you'll walk us through what we can expect to see in your final project.
