@@ -26,7 +26,8 @@ app.get('/new', function (req, res) {
 // Accept a POST request and display it (template in the file views/new.handlebars)
 app.post('/new', function (req, res) {
 	// set the latest message
-	storage.setItem("message", req.body.message);
+	var message = req.body.message;
+	storage.setItem("message", message);
 
 	// load the existing messages
 	var existing_messages = storage.getItem("message-list");
