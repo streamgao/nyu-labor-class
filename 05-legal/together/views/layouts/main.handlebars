@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
     <style>
+      body { background-color: #fafafa; }
       .taglist {
       margin: 0.5em;
       line-height: 2em;
@@ -25,7 +26,9 @@
       }
       .communication:hover {
         background-color: #f2f2f2;      
-
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
       }
       .question {
       font-size: 175%;
@@ -56,7 +59,11 @@
       <div class="btn-group" role="group" aria-label="...">
         <a href="/list" class="btn  btn-default">Home</a>
         <a href="/new" class="btn  btn-default">Ask a Question</a>
-
+        {{#if user }}
+          <a href="/logout" class="btn  btn-default">Sign Out</a>
+        {{ else }}
+          <a href="/login" class="btn  btn-default">Sign In</a>          
+        {{/if }}
       </div>
 
 	  <div class="row">

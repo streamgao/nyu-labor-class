@@ -41,7 +41,10 @@ var userRequired = function(req, res, next) {
 };
 
 
-
+var Render = function(res, req, name, data) {
+  data['user'] = req.user;
+  res.render(name, data);
+}
 
 // setup the storage...
 storage.initSync();
@@ -49,7 +52,6 @@ app.set('storage', storage);
 
 app.get('/', userSupported, function (req, res) {
   res.redirect('/list');
-  // res.render('home', { pageTitle: "Home"} );
 });
 
 
@@ -60,9 +62,9 @@ app.get('/question', userRequired, function (req, res) {
   var question = questions[req.query.id];
   var asker = new User().loadByKey(question.user);
   var answer_list = storage.getItem("answer-" + req.query.id);
-  res.render('question', { question: question,
-                           asker: asker,
-                           answers: answer_list } );
+  Render(res, req, 'question', { question: question,
+                                 asker: asker,
+                                 answers: answer_list } );
 });
 
 
@@ -73,11 +75,11 @@ app.get('/question', userRequired, function (req, res) {
 app.get('/new', userRequired, function (req, res) {
   // laod the message from storage
   var message = storage.getItem('message');
-  var tags = ['human-nature', 'evolution', 'food', 'nyc', 'cooking',
-              'programming', 'python', 'javascript',
+  var tags = ['human-nature', 'health', 'evolution', 'food', 'nyc', 'cooking',
+              'programming', 'python', 'javascript', 'culture',
               'actors', 'sports', 'music', 'new york city',
               'election-2016', 'fashion'];
-  res.render('new', { pageTitle: "Ask a question...", tags: tags } );
+  Render(res, req, 'new', { pageTitle: "Ask a question...", tags: tags } );
 });
 
 
@@ -152,7 +154,7 @@ app.post('/answer', userRequired, function (req, res) {
 // list all of the questions
 app.get('/list', userSupported, function (req, res) {
   var questions = storage.getItem(QUESTION_LIST_TABLE);
-  res.render('list', { questions: questions, pageTitle: "Questions" } );
+  Render(res, req, 'list', { questions: questions, pageTitle: "Questions" } );
 });
 
 /******************************************
@@ -160,7 +162,7 @@ app.get('/list', userSupported, function (req, res) {
  */
 // Display a new form (located in the file views/new.handlebars)
 app.get('/login', function (req, res) {
-  res.render('login', { pageTitle: "Sign in!"  } );
+  Render(res, req, 'login', { pageTitle: "Sign in!"  } );
 });
 
 app.get('/logout', function (req, res) {
