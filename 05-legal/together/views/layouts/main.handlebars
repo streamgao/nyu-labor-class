@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Q & A & A & A</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <style>
+      .taglist {
+      margin: 0.5em;
+      line-height: 2em;
+      }
+      .right {
+      float: right;
+      }      
+      .communication {
+      padding: 1em;
+      margin-bottom: 2.5em;
+
+      }
+      .communication:hover {
+        background-color: #f2f2f2;      
+
+      }
+      .question {
+      font-size: 175%;
+      }
+      .answer {
+      font-size: 160%;
+      }      
+      .question:before {
+      content: "Q:";
+      font-weight: bold;
+      }
+      .answer:before {
+      content: "A:";
+      font-weight: bold;
+      }            
+    </style>
+    
+  </head>
+  <body>
+    
+    <!-- Put everything in the container -->
+    <div class="container">
+      
+      <div class="page-header">    
+        <h1>Q & A & A & A</h1>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="...">
+        <a href="/list" class="btn  btn-default">Home</a>
+        <a href="/new" class="btn  btn-default">Ask a Question</a>
+
+      </div>
+
+	  <div class="row">
+	    <div class="col-md-7">
+          
+          {{#if messages.info}}
+            <div class="alert alert-success">
+              <span>{{ messages.info }}</span>
+            </div>
+          {{/if }}
+          {{#if messages.error}}
+            <div class="alert alert-danger">
+              <span>{{ messages.error }}</span>
+            </div>
+          {{/if }}
+          
+          <h3>{{ pageTitle }}</h3>
+          
+          {{{body}}}
+
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

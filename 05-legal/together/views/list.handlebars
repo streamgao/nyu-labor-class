@@ -1,0 +1,18 @@
+  {{#each questions}}
+<div class="communication">
+  <p class="question">
+    <a style="color: #333;" href="/question?id={{ @key }}">{{ this.body }}</a>
+  </p>
+  <div class="credits">
+    Question by <code>{{ this.user.username }}</code> on <code>{{ this.date }}</code>.
+    <div class="right">
+      {{#each this.tags }}<span class="label label-default">{{ this }}</span> {{/each }}
+    </div>
+  </div>
+</div>
+  {{else}}
+    <li class="list-group-item">    
+      None yet! <a href="/new">Submit your own</a>
+    </li>    
+   {{/each }}
+

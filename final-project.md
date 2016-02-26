@@ -7,11 +7,11 @@ Everyone will build an app (or website) that demonstrates some of the different 
 * A blog post detailing your app
   * Talk about the inspiration for your app, what it does, who will use it, why, etc.
   * Discuss the different parts (`clients`, `workers`, `jobs`, `products`)
-  * 
 * A zip file of the code
-* You will present your application in class (10 minutes each)
+* **You will present your application in class (10 minutes each)**
   * You should be able to demo your application
     * If it doesn't demo well, have one ready to go that you can show us (like on a baking show)
+  * You will walk us through the how it works, who it's for, why it's built, etc
 
 #### What does your app need to have?
 

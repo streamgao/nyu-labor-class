@@ -1,0 +1,18 @@
+<form method="POST">
+  
+  <textarea
+	class="form-control question"
+	rows="4"
+	type="text"
+	name="question"
+	maxlength="140"
+	placeholder="Example: What is one thing that drives everybody crazy?"></textarea>
+  
+  <div class="taglist">
+	{{#each tags }}
+	<nobr><input name="tags" type="checkbox" id="tag-{{ @index }}" value="{{ this }}">&nbsp;<label class="label label-default" for="tag-{{ @index }}">{{ this }}</label></nobr>
+	{{/each}}
+	</div>
+  <input type="submit" class="form-control btn btn-primary" value="Send the message!"> 
+  
+</form>

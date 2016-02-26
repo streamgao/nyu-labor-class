@@ -1,0 +1,53 @@
+
+
+<div class="communication">
+  <p class="question">
+    {{ question.body }}
+  </p>
+  <div class="credits">
+    Question by <code>{{ question.user.username }}</code> on <code>{{ question.date }}</code>.
+    <div class="right">
+      {{#each question.tags }}<span class="label label-default">{{ this }}</span> {{/each }}
+    </div>
+  </div>
+</div>
+
+{{#each answers}}
+  <div class="communication">
+    <p class="answer">
+      {{ this.body }}
+    </p>
+    <div class="credits">
+      Answer by <code>{{ this.user.username }}</code> on <code>{{ this.date }}</code>.
+      {{#if @first }}
+         <span class="label label-success">Best!</span>
+      {{ else }}
+         {{#if @last }} <span class="label label-info">Runner Up!</span> {{/if }}
+      {{/if }}      
+    </div>
+  </div>
+{{else}}
+  <em>No answers yet! Submit yours and earn money/respect.</em>
+{{/each }}
+
+<hr>
+
+<div>
+  <a href="javascript://" onclick="document.getElementById('answer-form').style.display='block'; this.style.display='none';">I have an answer</a>
+</div>
+
+<div id="answer-form" style="display: none;">
+  <form action="/answer" method="POST">
+  <input type="hidden" name="question" value="{{ question.id }}" />
+  <textarea
+	class="form-control answer"
+	rows="4"
+	type="text"
+	name="answer"
+	maxlength="140"
+	placeholder="Your answer is..."></textarea>
+
+    <input type="submit" class="form-control btn btn-primary" value="Send the message!"> 
+    
+  </form>
+</div>

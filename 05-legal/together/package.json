@@ -1,0 +1,24 @@
+{
+  "name": "together",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.13.0",
+    "fancyhands-node": "^0.1.3",
+    "md5": "^2.0.0",
+    "node-persist": "0.0.8",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}
