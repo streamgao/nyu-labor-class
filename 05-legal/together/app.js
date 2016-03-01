@@ -17,6 +17,8 @@ var QUESTION_LIST_TABLE = "question-list";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static('static'));
+
 app.use(cookieParser('something secret'));
 app.use(session());
 app.use(flash());
