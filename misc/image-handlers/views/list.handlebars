@@ -1,0 +1,12 @@
+
+<!-- Loop through the images.
+     In this case, the `images` is an array of
+     dictionary objects that contains an image_url
+     and the list of answers.
+  -->
+<ol>
+{{#each requests}}
+  <li><a href="/image?key={{ this.key }}">{{ this.title }}</a></li>
+{{/each }}
+</ol>
+

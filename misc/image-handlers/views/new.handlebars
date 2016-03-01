@@ -1,0 +1,22 @@
+
+<form method="POST" encType="multipart/form-data">	
+
+  {{#if success}}
+    <div class="alert alert-success">
+	  Success, requests create! Check <a href="/list">the list</a>!
+    </div>
+  {{/if }}
+  
+  <div class="input-group">
+    <input class="form-control" type="text" name="question" placeholder="What color is this dress?">
+    <span class="input-group-addon" >Question?</span>    	
+  </div>
+
+  <div class="input-group">
+	<input class="form-control"  type="file" name="image-file" />
+    <span class="input-group-addon" >File</span>    	
+  </div>
+
+  <input type="submit" class="form-control" value="Send the message!"> 
+  
+</form>
