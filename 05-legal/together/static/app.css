@@ -1,0 +1,34 @@
+
+body { background-color: #fafafa; }
+.taglist {
+    margin: 0.5em;
+    line-height: 2em;
+}
+.right {
+    float: right;
+}      
+.communication {
+    padding: 1em;
+    margin-bottom: 2.5em;
+
+}
+.communication:hover {
+    background-color: #f2f2f2;      
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.question {
+    font-size: 175%;
+}
+.answer {
+    font-size: 160%;
+}      
+.question:before {
+    content: "Q:";
+    font-weight: bold;
+}
+.answer:before {
+    content: "A:";
+    font-weight: bold;
+}            
