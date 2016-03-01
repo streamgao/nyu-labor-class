@@ -21,8 +21,9 @@ And then run
 node app.js
 ```
 
-
 Once it's running, you should be able to view the running example at `localhost:3000`
+
+![Here's an example](example.png)
 
 ---
 

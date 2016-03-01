@@ -10,19 +10,15 @@ var upload = multer({ dest: 'uploads/' })
 var app = express();
 
 // Configuration
-var FANCY_HANDS_API_KEY = "abcdefghijklmno";
-var FANCY_HANDS_API_SECRET = "pqrstuvwxyznwsw";
+var FANCY_HANDS_API_KEY = "";
+var FANCY_HANDS_API_SECRET = "";
+
+var CLOUDINARY_CLOUD_NAME = "";
+var CLOUDINARY_API_KEY = "";
+var CLOUDINARY_API_SECRET = "";
 
 
-var CLOUDINARY_CLOUD_NAME = "fancy-hands";
-var CLOUDINARY_API_KEY = "449869373376588";
-var CLOUDINARY_API_SECRET = "YFvL5oHbpvC0txB8UoerpfPYzFE";
-
-
-// var cpUpload = 
-
-// FIXME: remove the host name
-fancyhands.config(FANCY_HANDS_API_KEY, FANCY_HANDS_API_SECRET, "http://localhost:8080");
+fancyhands.config(FANCY_HANDS_API_KEY, FANCY_HANDS_API_SECRET);
 
 cloudinary.config({ 
   cloud_name: CLOUDINARY_CLOUD_NAME,
