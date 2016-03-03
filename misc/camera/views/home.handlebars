@@ -1,0 +1,46 @@
+
+<script type="text/javascript" src="camera.js"></script>
+
+
+
+
+<div id="camera-controls">
+  <button id="snap">Take a picture!</button>
+  <br />  
+  <video id="video" width="640" height="480" autoplay></video>
+</div>
+
+<div id="camera-results" style="display: none;">
+  
+  <button id="redo">Redo it!</button>
+  <br />
+  <canvas id="canvas" width="640" height="480"></canvas>
+
+  <form id="image-form" method="POST">
+
+    <!-- We'll set the image_url as a hidden field... the user doesn't care about it -->
+    <input id="image_url" type="hidden" name="image_url" value="">
+    
+    <div class="input-group">    
+      <input class="form-control" id="image_title" type="text"  name="image_title" value="" placeholder="Selfie!">
+      <span class="input-group-addon" >Image Title</span>    	      
+    </div>
+    
+    <input class="form-control" type="submit" value="Save it!">
+    
+  </form>
+</div>
+
+
+{{#each images}}
+  <div>
+    <h3>{{ this.title }}</h3>
+    <img src="{{ this.smaller }}" />
+    <img src="{{ this.red_border }}" />
+    <img src="{{ this.corners }}" />
+    <img src="{{ this.grey }}" />
+    <img src="{{ this.oil }}" />
+    <img src="{{ this.insta }}" />            
+    <hr >
+  </div>
+{{/each }}
