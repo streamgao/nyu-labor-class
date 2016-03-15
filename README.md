@@ -12,3 +12,5 @@
 3. [The Workers](https://github.com/tedroden/nyu-labor-class/blob/master/03-workers/)
 4. [Business](https://github.com/tedroden/nyu-labor-class/tree/master/04-business)
 5. [Legal](https://github.com/tedroden/nyu-labor-class/tree/master/05-legal)
+6. Work Day - We'll work on our final projects in class
+7. Final Presentations
